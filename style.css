@@ -1,0 +1,243 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f0f0f0;
+    --tertiary-color: #333;
+    --correct-color: #28a745;
+    --wrong-color: #dc3545;
+}
+
+body {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: var(--tertiary-color);
+    margin: 0;
+    padding: 10px; /* Reduzido o padding para caber mais na tela */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo dentro do contêiner */
+    gap: 10px; /* Adiciona um espaço entre os elementos */
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem; /* Diminui o tamanho da fonte para economizar espaço */
+    margin-bottom: 5px;
+}
+
+#status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: bold;
+    gap: 10px; /* Adiciona um pequeno espaço entre os elementos */
+}
+
+#score {
+    text-align: left;
+}
+
+#question-counter {
+    white-space: nowrap; /* Impede a quebra de linha na frase */
+    font-size: 0.9rem; /* Diminui a fonte para que caiba na linha */
+}
+
+#correct-count {
+    color: var(--correct-color);
+}
+
+#wrong-count {
+    color: var(--wrong-color);
+}
+
+#counter-text {
+    color: #007bff;
+}
+
+#quiz-box {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Permite que o quiz-box ocupe o espaço extra */
+}
+
+#question {
+    font-size: 1.2rem; /* Diminui o tamanho da fonte da pergunta */
+    margin-bottom: 10px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Simplifica o grid para telas pequenas */
+    gap: 10px;
+    width: 100%;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    color: var(--tertiary-color);
+    font-size: 1rem; /* Diminui a fonte dos botões */
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover:not([disabled]) {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn.correct {
+    background-color: var(--correct-color);
+    color: #fff;
+    border-color: var(--correct-color);
+}
+
+.btn.wrong {
+    background-color: var(--wrong-color);
+    color: #fff;
+    border-color: var(--wrong-color);
+}
+
+.hide {
+    display: none;
+}
+
+#feedback {
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-height: 25px;
+    margin: 5px 0;
+}
+
+#next-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#next-btn:hover {
+    opacity: 0.9;
+}
+
+/* Estilo padrão para telas maiores */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem; /* Tamanho da fonte padrão, para telas maiores */
+    color: #777;
+    margin-top: 20px;
+}
+
+#restart-btn {
+    background-color: #ff9800; /* cor laranja para diferenciar */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#restart-btn:hover {
+    background-color: #e68900; /* tom mais escuro no hover */
+    opacity: 0.95;
+}
+
+/* Regra para telas com largura máxima de 480px (telas de celular) */
+@media (max-width: 480px) {
+    footer {
+        font-size: 0.8rem; /* Diminui a fonte para 80% do tamanho padrão */
+        white-space: nowrap; /* Impede a quebra de linha do texto */
+        overflow: hidden; /* Esconde qualquer texto que ultrapasse a linha */
+        text-overflow: ellipsis; /* Adiciona "..." no final se o texto for cortado */
+    }
+}
+
+#explanation-box {
+    background-color: #e6f7e6; /* Um verde claro para destaque */
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+#explanation-box h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+#calculation {
+    font-weight: bold;
+    color: var(--tertiary-color);
+}
+
+
+.hide-initial {
+    display: none;
+}
+
+#start-btn {
+    /* Define a cor de fundo (verde, um bom contraste para começar) */
+    background-color: #546ba9; 
+    
+    /* Define a cor do texto (branco) */
+    color: white; 
+    
+    /* Adiciona um preenchimento (padding) para deixar o botão maior */
+    padding: 10px 20px; 
+    
+    /* Remove a borda padrão do botão */
+    border: none;
+    
+    /* Arredonda as bordas */
+    border-radius: 5px; 
+    
+    /* Altera o cursor para indicar que é clicável */
+    cursor: pointer;
+    
+    /* Adiciona uma sombra suave para dar profundidade */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Opcional: Torna o texto em maiúsculas e negrito */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Efeito ao passar o mouse (melhora a experiência do usuário) */
+#start-btn:hover {
+    /* Escurece um pouco a cor de fundo ao passar o mouse */
+    background-color: #1e3c7e;
+}
